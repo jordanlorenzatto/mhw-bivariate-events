@@ -1,0 +1,18 @@
+# Ignore everything
+/*
+
+# Allow specific files in home directory
+!.gitignore
+!mhw_detection_functions.py
+!mhw_detection_demo.ipynb
+!mhw_EDA.ipynb
+
+# Allow specific files in data sub-directory
+!/data
+/data/*
+!/data/temp_combined_ORS065_1990_2024.nc
+
+# Allow specific files in images sub-directory
+!/images
+/images/*
+!/images/*
