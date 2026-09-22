@@ -6,6 +6,7 @@
 !mhw_detection_functions.py
 !mhw_detection_demo.ipynb
 !mhw_EDA.ipynb
+!README.md
 
 # Allow specific files in data sub-directory
 !/data

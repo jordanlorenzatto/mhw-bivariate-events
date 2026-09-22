@@ -1,3 +1,9 @@
+# Authored by Jordan Lorenzatto, UNSW Sydney, Australia
+# Contact: j.lorenzatto@unsw.edu.au
+# Github: https://github.com/jordanlorenzatto
+# Generative AI was used to implement performance and
+# formatting improvements to existing code.
+
 import xarray as xr
 import numpy as np
 import pandas as pd
