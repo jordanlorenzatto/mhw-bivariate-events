@@ -18,7 +18,7 @@ __all__ = ['resample_daily', 'noleap_dayofyear', '_smooth_cyclic', 'make_thresho
             'prepare_mhw_data', 'select_threshold', 'fill_gaps', 'remove_short_runs',
             'detect_exceedance_events', 'label_exceedance_events', 'check_threshold_nesting',
             '_python_scalar', 'compute_exceedance_event_metrics', 'set_event_multiindex',
-            'run_mhw_detection']
+            'run_mhw_detection', 'select_events_by_threshold']
 
 
 ##### Calendar and preprocessing helpers #####
