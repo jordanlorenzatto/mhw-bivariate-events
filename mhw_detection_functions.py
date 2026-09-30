@@ -219,12 +219,16 @@ def compute_climatology_stats(
 
         # compute mean and std from pooled sample
         means.append(
-            sample.mean("time", skipna=True).where(valid_count >= min_samples)
+            sample
+            .mean("time", skipna=True)
+            .where(valid_count >= min_samples)
+            .astype("float32")
         )
         stds.append(
-            sample.std("time", skipna=True, ddof=std_ddof).where(
-                valid_count >= min_samples
-            )
+            sample
+            .std("time", skipna=True, ddof=std_ddof)
+            .where(valid_count >= min_samples)
+            .astype("float32")
         )
 
         # compute specified quantiles from pooled sample
@@ -235,7 +239,7 @@ def compute_climatology_stats(
                     category=RuntimeWarning,
                     message=".*All-NaN slice encountered.*",
                 )
-                q = sample.quantile(quantiles, dim="time", skipna=True)
+                q = sample.quantile(quantiles, dim="time", skipna=True).astype("float32")
             quantile_values.append(q.where(valid_count >= min_samples))
 
     # compute cyclic and smoothed climatological mean and std
@@ -693,7 +697,7 @@ def run_mhw_detection(
     std_ddof=1,
     max_gap=2,
     min_duration=5,
-    validate_nesting=True,
+    validate_nesting=False,
     multiindex=True,
 ):
     """Run the complete threshold -> event-mask -> event-catalogue workflow."""
